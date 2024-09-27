@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cute Recipes</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div id="particles"></div>
+    <div class="content-wrapper">
+        <nav class="navbar">
+            <ul>
+                <li><a href="index.html"><i class="fas fa-home"></i> Home</a></li>
+                <li><a href="recipes.html"><i class="fas fa-utensils"></i> Recipes</a></li>
+                <li><a href="#" id="favoritesLink"><i class="fas fa-heart"></i> Favorites</a></li>
+                <li><a href="#" id="profileLink"><i class="fas fa-user"></i> Profile</a></li>
+            </ul>
+        </nav>
+        <h1>Cute Recipes</h1>
+        <div class="search-container">
+            <input type="text" id="searchInput" placeholder="Search for recipes...">
+        </div>
+        <div class="recipe-grid">
+            <!-- Recipe cards will be dynamically added here -->
+        </div>
+    </div>
+    
+    <!-- Add this new modal div at the end of the body -->
+    <div id="recipeModal" class="modal">
+        <div class="modal-content recipe-modal-content">
+            <span class="close">&times;</span>
+            <h2 id="recipeTitle"></h2>
+            <img id="recipeImage" src="" alt="">
+            <p id="recipeDescription"></p>
+            <div id="recipeDetails"></div>
+            <h3>Ingredients:</h3>
+            <ul id="ingredientsList"></ul>
+            <h3>Instructions:</h3>
+            <ol id="instructionsList"></ol>
+            <div class="conversion-tools">
+                <h3>Conversion Tools:</h3>
+                <label for="servings">Adjust servings:</label>
+                <input type="number" id="servings" min="1" value="1">
+                <button id="convertServings">Update</button>
+                <br>
+                <label for="unitSystem">Unit system:</label>
+                <select id="unitSystem">
+                    <option value="metric">Metric</option>
+                    <option value="imperial">Imperial</option>
+                </select>
+            </div>
+        </div>
+    </div>
+
+    <script src="recipeConversion.js"></script>
+    <script src="recipes.js"></script>
+</body>
+</html>
